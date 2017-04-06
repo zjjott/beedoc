@@ -19,11 +19,11 @@ grace 模块是 beego 新增的一个独立支持热重启的模块。主要的�
 
 # 如何使用热升级
 
-```
+```golang
  import(
-   "log"
-	"net/http"
-	"os"
+    "log"
+    "net/http"
+    "os"
     "strconv"
 
    "github.com/astaxie/beego/grace"
@@ -45,6 +45,13 @@ grace 模块是 beego 新增的一个独立支持热重启的模块。主要的�
       log.Println("Server on 8080 stopped")
 	     os.Exit(0)
     }
+```
+
+也可以直接在beego应用中开启热重启支持：
+
+```golang
+beego.BConfig.Listen.Graceful = true
+beego.Run()
 ```
 
 
